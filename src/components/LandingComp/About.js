@@ -10,7 +10,7 @@ const About = () => {
                     <p className='text-[#00df9a] font-bold '>ABOUT THE PROJECT</p>
                     <h1 className='md:text-4xl sm:text-3xl text-2xl font-bold py-2'>NLP-Based Interview Analysis Tool</h1>
                     <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                    Our project is an NLP-based interviewing analysis tool that helps job candidates improve their interviewing skills by analyzing their answers to chosen questions. With this tool, you will be able to identify your strengths and weaknesses, and receive valuable feedback on how to improve your answers. By using this tool, you will be better prepared for your next interview and increase your chances of landing your dream job.
                     </p>
                     <button className='bg-black text-[#00df9a] w-[200px] rounded-md font-medium my-6 mx-auto md:mx-0 py-3'>Get Started</button>
                 </div>
