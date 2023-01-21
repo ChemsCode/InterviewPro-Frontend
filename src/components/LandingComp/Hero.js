@@ -1,5 +1,7 @@
 import React from "react";
 import Typed from "react-typed";
+import { Link } from "react-router-dom";
+
 
 const Hero = () => {
     return (
@@ -26,9 +28,11 @@ const Hero = () => {
                 <p className="md:text-2xl text-xl font-bold text-gray-500">
                     Achieve your dream job with our NLP-based interviewing tool for Behavioural Interviews
                 </p>
+                <Link to="/home">
                 <button className="bg-[#00df9a] w-[200px] rounded-md font-medium my-6 mx-auto py-3 text-black">
                     Get Started
                 </button>
+                </Link>
             </div>
         </div>
     );

@@ -1,5 +1,6 @@
 import React from 'react';
 import Laptop from '../../assets/laptop.png';
+import { Link } from "react-router-dom";
 
 const About = () => {
     return (
@@ -12,7 +13,9 @@ const About = () => {
                     <p>
                     Our project is an NLP-based interviewing analysis tool that helps job candidates improve their interviewing skills by analyzing their answers to chosen questions. With this tool, you will be able to identify your strengths and weaknesses, and receive valuable feedback on how to improve your answers. By using this tool, you will be better prepared for your next interview and increase your chances of landing your dream job.
                     </p>
+                    <Link to="/home">
                     <button className='bg-black text-[#00df9a] w-[200px] rounded-md font-medium my-6 mx-auto md:mx-0 py-3'>Get Started</button>
+                    </Link>
                 </div>
             </div>
         </div>
