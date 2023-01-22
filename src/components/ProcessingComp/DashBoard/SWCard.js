@@ -13,7 +13,7 @@ function SWCard({ icons, title, param1, param2 }) {
         <p className=" bg-green-400 rounded-lg  py-2 border-b mx-8 mt-8">
           {title}
         </p>
-        <ul class="max-w-md space-y-1 text-gray-800 list-disc list-inside dark:text-gray-400">
+        <ul class="space-y-1 text-gray-900 list-decimal list-inside">
           <li>{param1}</li>
           <li>{param2}</li>
         </ul>

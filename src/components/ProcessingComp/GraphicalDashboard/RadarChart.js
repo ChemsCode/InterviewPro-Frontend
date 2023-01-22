@@ -48,7 +48,7 @@ function RadarChart({ com, lead, team, crit, int, amb, flex }) {
           className="flex items-center justify-center my-5"
           style={{ fontSize: "2rem" }}
         >
-          Radar Chart
+          Skill Chart
         </h1>
         <Radar data={data} />
       </div>
