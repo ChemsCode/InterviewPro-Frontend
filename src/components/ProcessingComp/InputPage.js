@@ -5,11 +5,15 @@ import {
   faInfoCircle,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import axios from "../../api/axios";
 import Navbar from "../Navbar";
+import { useNavigate} from "react-router-dom";
 
 const INPUT_REGEX = /.+/;
+const URL = "/openai";
 
-export default function InputPage() {
+export default function UserInputPage() {
+  const navigate = useNavigate();
   const errRef = useRef();
 
   const [answer, setAnswer] = useState("");
@@ -47,12 +51,46 @@ export default function InputPage() {
     setErrMsg("");
   }, [interviewQuestion]);
 
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const confirmInterviewQuestion = INPUT_REGEX.test(interviewQuestion);
+    const confirmAnswer = INPUT_REGEX.test(answer);
+    if (!confirmAnswer || !confirmInterviewQuestion) {
+      setErrMsg("Invalid Entry/Entries");
+      console.log("Invalid Entry/Entries");
+      return;
+    }
+    try {
+      const response = await axios.post(
+        URL,
+        JSON.stringify({ answer, interviewQuestion }),
+        {
+          headers: { "Content-Type": "application/json" },
+          withCredentials: true,
+        }
+      );
+      setApiResponse(response?.data);
+      console.log(apiResponse.message);
+      setSuccess(true);
+      
+    } catch (err) {
+      if (!err?.response) {
+        setErrMsg("No Server Response");
+      } else {
+        setErrMsg("Failed");
+      }
+      errRef.current.focus();
+    }
+  };
   return (
     <>
       <Navbar />
 
       <div className="w-full bg-white py-16 px-4">
-        <form className="max-w-[1000px] mt-[0px] mx-auto text-center flex flex-col justify-center">
+        <form
+          onSubmit={handleSubmit}
+          className="max-w-[1000px] mt-[0px] mx-auto text-center flex flex-col justify-center"
+        >
           <p
             ref={errRef}
             className={
@@ -128,9 +166,7 @@ export default function InputPage() {
             />
             <FontAwesomeIcon
               icon={faTimes}
-              className={
-                validAnswer || !answer ? "hidden" : "text-red-500 px-1.5"
-              }
+              className={validAnswer || !answer ? "hidden" : "text-red-500 px-1.5"}
             />
           </label>
           <textarea
@@ -158,14 +194,12 @@ export default function InputPage() {
             Needs an input
           </p>
           <div className="flex flex- justify-center">
-            <button
-              disabled={!validAnswer ? true : false}
-              className="bg-black text-[#00df9a] w-[200px] rounded-md font-medium my-6 mx-auto md:mx-0 py-3"
-            >
+            <button disabled={!validAnswer ? true : false} className="bg-black text-[#00df9a] w-[200px] rounded-md font-medium my-6 mx-auto md:mx-0 py-3">
               Get Feedback!
             </button>
           </div>
         </form>
+        <div id="tempAnswer">{apiResponse.message}</div>
       </div>
     </>
   );
