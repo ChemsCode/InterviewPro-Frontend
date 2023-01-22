@@ -34,6 +34,7 @@ function RadarChart({ com, lead, team, crit, int, amb, flex }) {
       {
         label: "Top Skills",
         data: [com, lead, team, crit, int, amb, flex],
+        fill: true,
         backgroundColor: "rgba(0, 255, 0, 0.2)",
         borderColor: "rgba(60, 179, 113, 1)",
         borderWidth: 1,

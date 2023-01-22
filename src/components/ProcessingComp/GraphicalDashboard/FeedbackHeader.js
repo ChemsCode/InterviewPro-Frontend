@@ -1,6 +1,6 @@
 import React from "react";
 import PopUp from "./../DashBoard/PopUp";
-import { GoThumbsup } from "react-icons/go";
+
 
 function FeedbackHeader({ overallRating }) {
   return (
@@ -10,7 +10,7 @@ function FeedbackHeader({ overallRating }) {
           className="flex items-center justify-center"
           style={{ fontSize: "2rem" }}
         >
-          {"Great Job for your interview"} <GoThumbsup />
+          {"Great Job for your interview"} 
         </h1>
 
         <div>

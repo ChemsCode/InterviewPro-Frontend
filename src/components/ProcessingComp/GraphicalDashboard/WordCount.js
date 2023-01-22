@@ -1,7 +1,7 @@
 import React from "react";
 import { AiOutlineNumber } from "react-icons/ai";
 
-function WordCount() {
+function WordCount( {numWords} ) {
   return (
     <div className="col-span-1 row-span-1 shadow-xl flex flex-col p-4 my-4 rounded-lg duration-300 h-full w-full justify-around bg-white">
       <div className="text-center font-sm font-medium">
@@ -11,7 +11,7 @@ function WordCount() {
         >
           <AiOutlineNumber /> {"Words"}
         </h1>
-        <p className="my-10  text-3xl">457</p>
+        <p className="my-10  text-3xl">{numWords}</p>
       </div>
     </div>
   );
