@@ -1,5 +1,7 @@
 import React from 'react';
 import Laptop from '../../assets/laptop.png';
+import { Link } from "react-router-dom";
+
 
 
 const HowTo = () => {
@@ -35,7 +37,9 @@ const HowTo = () => {
                     <br/>
                     Please note that our analysis is based on NLP techniques, it will give you a general idea of your answer and a feedback but it's not a substitute for a human hiring manager or an interviewer evaluation. It's just a tool to help you practice and improve your interviewing skills.
                     </p>
+                    <Link to="/input-page">
                     <button className='bg-black text-[#00df9a] w-[200px] rounded-md font-medium my-6 mx-auto md:mx-0 py-3'>Get Started</button>
+                    </Link>
                 </div>
             </div>
         </div>

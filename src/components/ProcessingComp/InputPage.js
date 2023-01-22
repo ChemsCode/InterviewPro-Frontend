@@ -72,7 +72,7 @@ export default function UserInputPage() {
       setApiResponse(response?.data);
       console.log(apiResponse.message);
       setSuccess(true);
-      
+      navigate('/feedback',{state:{answer:JSON.parse(response?.data.message), question: interviewQuestion, interviewAnswer: "answer"}})
     } catch (err) {
       if (!err?.response) {
         setErrMsg("No Server Response");
@@ -199,7 +199,6 @@ export default function UserInputPage() {
             </button>
           </div>
         </form>
-        <div id="tempAnswer">{apiResponse.message}</div>
       </div>
     </>
   );

@@ -3,6 +3,7 @@ import Layout from "./Layout";
 import LandingPage from "./components/LandingComp/LandingPage";
 import Home from "./components/HomeComp/Home";
 import InputPage from "./components/ProcessingComp/InputPage";
+import FeedbackPage from "./components/ProcessingComp/FeedbackPage";
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
         <Route path="/" element={<LandingPage />} />
         <Route path="/home" element={<Home />} />
         <Route path="/input-page" element={<InputPage />} />
+        <Route path="/feedback" element={<FeedbackPage />} />
       </Route>
       {/* invalid routes*/}
       <Route path="*" element={<Layout />} />
