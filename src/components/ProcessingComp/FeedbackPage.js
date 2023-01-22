@@ -17,19 +17,17 @@ function FeedbackPage() {
                 <BriefDashboard fb={feedback.state.answer} qst={feedback.state.question} ans={feedback.state.interviewAnswer} />
 
                 <DisplaySWI fb={feedback.state.answer.dict1} />
-                <h1
-                    className="flex items-center justify-center my-5"
-                    style={{ fontSize: "2rem" }}
+                <div
+                    className="text-center text-4xl"
                 >
                     SKILLS
-                </h1>
+                </div>
                 <DisplayTopSkills fb={feedback.state.answer.dict2} />
-                <h1
-                    className="flex items-center justify-center my-5"
-                    style={{ fontSize: "2rem" }}
+                <div
+                    className="text-center text-4xl translate-y-20"
                 >
                     STAR
-                </h1>
+                </div>
                 <DisplaySTAR fb={feedback.state.answer.dict4} />
             </div>
         </>

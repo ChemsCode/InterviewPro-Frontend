@@ -6,10 +6,11 @@ import { GiSkeleton } from "react-icons/gi";
 
 function STARCard({ STARTitle, starfb}) {
   return (
-    <div className="grid grid-flow-row grid-flow-colum grid-rows-3 gap-5 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2  h-full w-full rounded-md">
-      <div className="col-span-2 row-span-1 h-full w-full text-center font-medium">
+    <div className="col-span-1 row-span-1 flex flex-col p-4 my-4 rounded-lg duration-300 h-full w-full justify-start">
+          <div className="col-span-2 row-span-1 h-full w-full text-center font-medium text-lg">
         <p className="rounded-lg  py-2 border-b mx-8 mt-8">{STARTitle}</p>
       </div>
+      <div className="grid grid-rows-2 gap-5 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2  h-full w-full rounded-md">
 
       <div className="col-span-1 row-span-1 h-full w-full">
         <STARSubCard icon={<GiBiceps />} title={"Strength"} param={starfb[1]} />
@@ -23,6 +24,8 @@ function STARCard({ STARTitle, starfb}) {
         <STARSubCard icon={<GiSkeleton />} title={"Weakness"} param={starfb[2]} />
       </div>
     </div>
+    </div>
+    
   );
 }
 
