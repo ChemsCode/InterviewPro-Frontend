@@ -7,7 +7,7 @@ import {
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import axios from "../../api/axios";
 import Navbar from "../Navbar";
-import { useNavigate} from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const INPUT_REGEX = /.+/;
 const URL = "/openai";
@@ -72,7 +72,11 @@ export default function UserInputPage() {
       setApiResponse(response?.data);
       console.log(apiResponse.message);
       setSuccess(true);
-      navigate('/feedback',{state:{answer:JSON.parse(response?.data.message), question: interviewQuestion, interviewAnswer: "answer"}})
+      let startIndex = response.data.message.indexOf("{");
+      let jsonString = response.data.message.substring(startIndex);
+      let parsedData = JSON.parse(jsonString);
+      console.log(parsedData)
+      navigate('/feedback', { state: { answer: parsedData, question: "question", interviewAnswer: "answer" } })
     } catch (err) {
       if (!err?.response) {
         setErrMsg("No Server Response");
@@ -148,8 +152,8 @@ export default function UserInputPage() {
             id="cnidnote"
             className={
               interviewQuestionFocus &&
-              interviewQuestion &&
-              !validInterviewQuestion
+                interviewQuestion &&
+                !validInterviewQuestion
                 ? "text-xs rounded-md bg-black text-white my-1 py-1 px-2"
                 : "hidden"
             }
