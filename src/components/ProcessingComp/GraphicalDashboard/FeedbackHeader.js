@@ -2,7 +2,7 @@ import React from "react";
 import PopUp from "./../DashBoard/PopUp";
 
 
-function FeedbackHeader({ overallRating }) {
+function FeedbackHeader({ overallRating, improvedA }) {
   return (
     <div className="flex h-full w-full py-5 px-10 justify-between">
       <div>
@@ -14,7 +14,7 @@ function FeedbackHeader({ overallRating }) {
         </h1>
 
         <div>
-          <PopUp />
+          <PopUp improvedAns={improvedA}  />
         </div>
       </div>
 

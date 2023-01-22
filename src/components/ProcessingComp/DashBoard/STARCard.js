@@ -6,8 +6,8 @@ import { GiSkeleton } from "react-icons/gi";
 
 function STARCard({ STARTitle, starfb}) {
   return (
-    <div className="col-span-1 row-span-1 flex flex-col p-4 my-4 rounded-lg duration-300 h-full w-full justify-start">
-          <div className="col-span-2 row-span-1 h-full w-full text-center font-medium text-lg">
+    <div className="col-span-1 row-span-1 flex flex-col p-4 my-4 rounded-lg duration-300 h-full w-full justify-between">
+          <div className="col-span-2 row-span-1 h-full w-full text-center font-lg text-2xl">
         <p className="rounded-lg  py-2 border-b mx-8 mt-8">{STARTitle}</p>
       </div>
       <div className="grid grid-rows-2 gap-5 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2  h-full w-full rounded-md">

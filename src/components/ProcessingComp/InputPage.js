@@ -76,7 +76,7 @@ export default function UserInputPage() {
       let jsonString = response.data.message.substring(startIndex);
       let parsedData = JSON.parse(jsonString);
       console.log(parsedData)
-      navigate('/feedback', { state: { answer: parsedData, question: "question", interviewAnswer: "answer" } })
+      navigate('/feedback', { state: { answer: parsedData, question: interviewQuestion, interviewAnswer: answer } })
     } catch (err) {
       if (!err?.response) {
         setErrMsg("No Server Response");

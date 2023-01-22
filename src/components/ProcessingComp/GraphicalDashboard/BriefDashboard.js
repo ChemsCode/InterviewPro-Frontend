@@ -19,7 +19,7 @@ function BriefDashboard( {fb, qst, ans} ) {
   
   return (
     <>
-      <FeedbackHeader overallRating={fb.overallScore} />
+      <FeedbackHeader overallRating={fb.overallScore} improvedA={fb.entireImprovedResponse} />
       <div className="grid grid-flow-row grid-flow-colum grid-rows-3 gap-5 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-6  h-full w-full">
         <div className="col-span-2 row-span-3 h-full w-full">
           <RadarChart
